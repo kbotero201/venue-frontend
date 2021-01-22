@@ -3,16 +3,19 @@ import './App.css';
 import EventsList from "./EventsList"
 
 function App() {
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-       
+    <div>
+      
         <p>
-          Test
+          Test2
         </p>
-      </header>
-
-
+        
+      
+      <EventsList />
+      
     </div>
   );
 }

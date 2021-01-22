@@ -4,7 +4,7 @@ function AddUserForm(){
 
     return(
     <div>
-        <form  >
+        <form >
         <div >
           <input 
             //value={name}
@@ -25,7 +25,7 @@ function AddUserForm(){
         </form>
     </div>
     )
-}
+  }
 
 
 export default AddUserForm
