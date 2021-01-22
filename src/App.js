@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './App.css';
 import EventsList from "./EventsList"
 
 function App() {
+
+  const[events, setEvents] = useState([])
+
+  useEffect(()=> {
+    fetch("http://127.0.0.1:3000/api/v1/venues/")
+      .then(resp=> resp.json())
+      .then(data => {
+        console.log(data)
+        //setEvents(data)
+    })
+  },[])
 
 
   
@@ -20,6 +31,6 @@ function App() {
   );
 }
 
-export default App;
+export default App
 
 

@@ -4,10 +4,10 @@ import Event from "./Event";
 
 function EventsList() {
 
-    const Mappl
+    const eventsMapped = "asdf"
 
     return (
-            <table >
+            <table class="table">
               <tbody>
                 <tr>
                   <th>
@@ -24,7 +24,8 @@ function EventsList() {
                   </th>
 
                 </tr>
-                {/* {} */}
+                <Event />
+                <Event />
               </tbody>
         </table>
 
