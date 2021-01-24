@@ -1,13 +1,14 @@
 import React from "react"
 
-function Event(){
+function Event({event}){
 
     return(
         <tr>
-            <td>Event Name</td>
-            <td>Event Type</td>
-            <td>Group/Type</td>
-            <td>Venue Name</td>
+            <td>{event.event_name}</td>
+            <td>{event.performer_name}</td>
+            <td>{event.event_type}</td>
+            <td>{event.description.slice(0,13)}...</td>
+            <td>{event.venue.name}</td>
         </tr>
     )
 }

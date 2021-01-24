@@ -2,30 +2,36 @@ import React from "react";
 import Event from "./Event";
 
 
-function EventsList() {
+function EventsList({events}) {
 
-    const eventsMapped = "asdf"
+    console.log(events)
+    const eventsMapped = events.map((event) => {
+      return <Event event={event} key={event.id}/>
+    })
 
     return (
-            <table class="table">
+            <table className="table">
               <tbody>
                 <tr>
                   <th>
-                    <h3 >Date </h3>
+                    <h3 >Name </h3>
+                  </th>
+                  <th>
+                    <h3 >Preformer</h3>
+                  </th>
+                  <th>
+                    <h3> Type of Event</h3>
                   </th>
                   <th>
                     <h3 >Description</h3>
-                  </th>
-                  <th>
-                    <h3 >Category</h3>
                   </th>
                   <th>
                     <h3 >Amount</h3>
                   </th>
 
                 </tr>
-                <Event />
-                <Event />
+                {eventsMapped}
+                
               </tbody>
         </table>
 
