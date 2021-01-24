@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import EventsList from "./EventsList"
 import Header from "./Header"
-import EventShow from "./EventShow"
+import EventShow from "./pages/EventShow"
 
 
 function App() {
@@ -43,15 +43,18 @@ function App() {
           Test2
         </p>
       <Switch>
+      <Route exact path="/">
+          <EventsList events={events}/>
+        </Route>
       <Route exact path="/events/:id">
-          <h1> asdf adsfkjasldf </h1>
           <EventShow />
         </Route>
         <Route path="/events">
           <EventsList events={events}/>
         </Route>
-        <Route path="/">
-          <EventsList events={events}/>
+
+        <Route path="*">
+          <h1>404 Page</h1>
         </Route>
       </Switch>
       

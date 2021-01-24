@@ -2,6 +2,7 @@ import React from "react";
 import Event from "./Event";
 
 
+
 function EventsList({events}) {
 
     console.log(events)
@@ -14,7 +15,9 @@ function EventsList({events}) {
               <tbody>
                 <tr>
                   <th>
+                    
                     <h3 >Name </h3>
+                  
                   </th>
                   <th>
                     <h3 >Preformer</h3>
