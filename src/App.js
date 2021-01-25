@@ -9,6 +9,20 @@ import EventShow from "./pages/EventShow"
 function App() {
 
   const[events, setEvents] = useState([])
+  const[isLogin, setIsLogin] = useState(false)
+  //const[currentUser, setCurrentUser] =useState([])
+  //console.log(isLogin);
+
+  // function handleLogin() {
+  //   fetch("http://localhost:3000/autologin")
+  //     .then((r) => r.json())
+  //     .then(setCurrentUser);
+  // }
+
+  // function handleLogout() {
+  //   setCurrentUser(null);
+  // }
+
 
   useEffect(()=> {
     fetch("http://127.0.0.1:3000/api/v1/events/")
@@ -19,29 +33,26 @@ function App() {
     })
   },[])
 
-  // function getCurrentPage(){
-  //   const pathname = window.location.pathname
-  //   console.log(pathname)
-  //   if (pathname === "/"){
-  //     return <EventsList events={events}/>
-  //   } else if (pathname === "/events"){
-  //     return <EventsList events={events}/>
-  //   } else if (pathname === "/event/1") {
-  //     return  <EventShow /> 
-  //   } else {
-  //     return <h1> 404 not found </h1>
-  //   }
-  // }
-
+  // currentUser={currentUser} 
+  // setCurrentUser={setCurrentUser} 
+  
+  // handleLogout={handleLogout}
+  // handleLogin={handleLogin}
   
   return (
     <div>
       
-      <Header />
+      <Header 
 
-        <p>
-          Test2
-        </p>
+      isLogin={isLogin} 
+      setIsLogin={setIsLogin}
+
+      />
+
+      <p>
+        Test2
+      </p>
+
       <Switch>
       <Route exact path="/">
           <EventsList events={events}/>

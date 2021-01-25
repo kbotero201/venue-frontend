@@ -5,7 +5,7 @@ import Event from "./Event";
 
 function EventsList({events}) {
 
-    console.log(events)
+    //console.log(events)
     const eventsMapped = events.map((event) => {
       return <Event event={event} key={event.id}/>
     })
