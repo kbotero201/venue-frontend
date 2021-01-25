@@ -3,14 +3,29 @@ import Event from "./Event";
 
 
 
-function EventsList({events}) {
+function EventsList({events, setSelectedCategory, handleCategoryName}) {
 
-    //console.log(events)
     const eventsMapped = events.map((event) => {
       return <Event event={event} key={event.id}/>
     })
 
+
+    function handleCategoryClick(evt){
+      setSelectedCategory(evt.target.value)
+    }
+
     return (
+          
+          <div>
+            <div>
+              <select onChange={handleCategoryClick} name="filter">
+                <option value="All"> Filter </option>
+                <option value="Concert"> Concert </option>
+                <option value="Party"> Party </option>
+                <option value="Movies"> Movies </option>
+              </select>
+            </div>
+            
             <table className="table">
               <tbody>
                 <tr>
@@ -29,14 +44,16 @@ function EventsList({events}) {
                     <h3 >Description</h3>
                   </th>
                   <th>
-                    <h3 >Amount</h3>
+                    <h3 >Location</h3>
                   </th>
 
                 </tr>
                 {eventsMapped}
+               
                 
               </tbody>
-        </table>
+          </table>
+        </div>
 
     );
 

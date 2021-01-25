@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom"
 import LoginButtons from "./pages/LoginButtons"
+import Search from "./Search.js"
 
-function Header({ isLogin, setIsLogin}){
+function Header({ currentUser, setCurrentUser, search, setSearch, setUserTicketList}){
 
     //const [currentUser, setCurrentUser] = useState(null)
     //const [isLoaded, setIsLoaded] =useState(false);
@@ -39,13 +40,13 @@ function Header({ isLogin, setIsLogin}){
     //     console.log(currentUser, "New Login")
     // }
 
-  // manual logout
-//   function handleLogout() {
+    // manual logout
+    //   function handleLogout() {
 
-//     setIsLogin((isLogin)=> !isLogin)
-//     setCurrentUser(null);
-//     setIsLogin(false)
-//   }
+    //     setIsLogin((isLogin)=> !isLogin)
+    //     setCurrentUser(null);
+    //     setIsLogin(false)
+    //   }
 
     // if (!isLoaded) return <h2>Loading...</h2>
     // else {
@@ -55,22 +56,23 @@ function Header({ isLogin, setIsLogin}){
             <Link to="/">
             <h1>
                 <span>
-               
+               🎸
                 </span>
                 Steal the Show
             </h1>
             </Link>
 
+            <Search search={search} setSearch={setSearch} />
+
             {/* <div>
                 {isLogin ? <button onClick={handleLogout}>Log out</button> : <button onClick={handleLogin}>Log in</button>}
                 {isLogin ? <h1>Welcome, PlaceHolder</h1> : "test: Welcome, not logged in"}
             </div> */}
-
             <div>
             
             </div>
             
-            <LoginButtons/>
+            <LoginButtons currentUser={currentUser} setCurrentUser={setCurrentUser} setUserTicketList={setUserTicketList}/>
         </header>
         )
    // }

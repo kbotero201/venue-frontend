@@ -4,64 +4,83 @@ import './App.css';
 import EventsList from "./EventsList"
 import Header from "./Header"
 import EventShow from "./pages/EventShow"
+import UserShow from "./pages/UserShow"
+import AddUserForm from "./AddUserForm"
 
 
 function App() {
 
   const[events, setEvents] = useState([])
-  const[isLogin, setIsLogin] = useState(false)
-  //const[currentUser, setCurrentUser] =useState([])
-  //console.log(isLogin);
+  //const[isLogin, setIsLogin] = useState(false)
+  const [eventsToShow, setEventsToShow] = useState([])
+  const[currentUser, setCurrentUser] = useState([])
+  const [search, setSearch] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("All")
 
-  // function handleLogin() {
-  //   fetch("http://localhost:3000/autologin")
-  //     .then((r) => r.json())
-  //     .then(setCurrentUser);
-  // }
-
-  // function handleLogout() {
-  //   setCurrentUser(null);
-  // }
+  const [userTicketList, setUserTicketList] = useState([])
 
 
   useEffect(()=> {
     fetch("http://127.0.0.1:3000/api/v1/events/")
       .then(resp=> resp.json())
       .then(data => {
-        //console.log(data)
         setEvents(data)
     })
   },[])
 
-  // currentUser={currentUser} 
-  // setCurrentUser={setCurrentUser} 
-  
-  // handleLogout={handleLogout}
-  // handleLogin={handleLogin}
-  
+  let filteredSearch= events.filter(
+    (event)=> event.event_name.toLowerCase().includes(search.toLowerCase())
+    ).filter((event) => {
+      if (selectedCategory === "All") {
+        return true
+      } else {
+      return (event.event_type === selectedCategory)
+      }
+    })
+
+  //let filteredSearch2= events.filter(
+  //  (event)=> event.performer_name.toLowerCase().includes(search.toLowerCase())
+  //)
+  // let finalFiltered = filteredSearch.concat(filteredSearch2).unique()
+
+
+
+
+
   return (
     <div>
       
       <Header 
-
-      isLogin={isLogin} 
-      setIsLogin={setIsLogin}
-
+      currentUser={currentUser} 
+      setCurrentUser={setCurrentUser}
+      search={search}
+      setSearch={setSearch}
+      setUserTicketList={setUserTicketList}
       />
 
-      <p>
-        Test2
-      </p>
 
       <Switch>
       <Route exact path="/">
-          <EventsList events={events}/>
+          <EventsList events={filteredSearch} 
+                      setSelectedCategory={setSelectedCategory}/>
         </Route>
       <Route exact path="/events/:id">
-          <EventShow />
+          <EventShow currentUser={currentUser}  
+                      setCurrentUser={setCurrentUser} 
+                      setUserTicketList={setUserTicketList} 
+                      userTicketList={userTicketList}/>
         </Route>
         <Route path="/events">
           <EventsList events={events}/>
+        </Route>
+        <Route exact path="/users/:id">
+          <UserShow currentUser={currentUser} 
+                    setCurrentUser={setCurrentUser} 
+                    userTicketList={userTicketList} 
+                    setUserTicketList={setUserTicketList}/>
+        </Route>
+        <Route exact path="/sign-up">
+          <AddUserForm />
         </Route>
 
         <Route path="*">
