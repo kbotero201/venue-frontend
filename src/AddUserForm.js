@@ -35,9 +35,13 @@ function AddUserForm(){
 
 
     return(
-    <div>
+    <div className="card">
+      <div>
         <h1> Sign Up </h1>
+      </div>
+       
 
+      <div>
         <form onSubmit={handleSubmit} >
         <div >
           <p> Name </p>
@@ -73,6 +77,7 @@ function AddUserForm(){
             By continuing past this page, you agree to the Terms of Use and understand that information will be used as described in our Privacy Policy.
             </p>
         </div>
+      </div>
 
     </div>
     )
