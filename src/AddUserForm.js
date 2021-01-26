@@ -45,30 +45,39 @@ function AddUserForm(){
         <form onSubmit={handleSubmit} >
         <div >
           <p> Name </p>
-          <input 
+          <div className="search">
+          <input className="round"
             value={name}
             onChange={(e)=> setName(e.target.value)}
             type="name" 
             name="name" 
             placeholder="Name..." />
+          </div>
           
           <p> Password </p>
-          <input 
+          <div className="search">
+          <input className="round"
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
             type="password" 
             name="password" 
             placeholder="Password..." />
-            <p> Favorite Event </p>
-            <select  value={favorite} onChange={(e)=> setFavorite(e.target.value)} name="favorite" type="favorite" >
+          </div>
+
+          <p> Favorite Event </p>
+          <div className="search"></div>
+            <select value={favorite} onChange={(e)=> setFavorite(e.target.value)} name="favorite" type="favorite" >
                 <option value="Concert"> Concert </option>
                 <option value="Party"> Party </option>
                 <option value="Movies"> Movies </option>
             </select>
+          <div className="search"></div>
         </div>
+
         <button type="submit">
           Sign Up
         </button>
+
         </form>
         <div>
             <input type="checkbox" id="agree" name="agree"/>
