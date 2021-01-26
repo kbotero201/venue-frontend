@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom"
 
-function LoginButtons({currentUser, setCurrentUser, setUserTicketList}) {
+function LoginButtons({currentUser, setCurrentUser}) {
 
     // auto-login
     useEffect(() => {
-      fetch("http://localhost:3000/autologin")
+      fetch("http://localhost:3000/api/v1/users/1")
         .then((r) => r.json())
         .then(r => setCurrentUser(r));
     }, []);

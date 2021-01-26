@@ -59,8 +59,8 @@ function EventShow({currentUser, setCurrentUser, userTickets, setUserTickets}){
         <div>
         <h1>{event.event_name}</h1>
         <h2>{event.performer_name}</h2>
-        <img className="imgShow" src={event.image} />
-        <img className="imgShow" src={"venue-frontend/public/images/patrick.png"} />
+        <img className="imgShow" src={event.image} alt={event.event_name}/>
+        
         <br></br>
         <p>About: {event.description}</p>
         <button onClick={handleBuyButton}>Buy Ticket!</button>

@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom"
-import LoginButtons from "./pages/LoginButtons"
-import Search from "./Search.js"
+// import LoginButtons from "./pages/LoginButtons"
+// import Search from "./Search.js"
 
-function Header({ currentUser, setCurrentUser, search, setSearch, setUserTicketList}){
+function Header(){
 
         return(
             <div className="Logo">
@@ -16,12 +16,8 @@ function Header({ currentUser, setCurrentUser, search, setSearch, setUserTicketL
                 </h1>
                 </Link>
             </div>
-
-
-      
         
         )
-   // }
 
 }
 

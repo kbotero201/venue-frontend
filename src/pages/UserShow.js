@@ -1,8 +1,8 @@
-import React, { useState }from "react"
+import React from "react"
 //import { useParams } from "react-router-dom"
 import UserEventList from "./UserEventList"
 
-function UserShow( {currentUser, setCurrentUser, userTicketList, setTickects}){
+function UserShow( {currentUser, setCurrentUser, setTickects}){
 
     //console.log(currentUser.tickets)
 

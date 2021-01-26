@@ -10,7 +10,7 @@ function Event({event}){
         <div className="card" >
             
               <div className="div1">
-                <img src={event.image}/>
+                <img src={event.image} alt={event.event_name}/>
               </div>
 
               <div className="div2">
