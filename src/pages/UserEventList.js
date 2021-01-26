@@ -11,6 +11,7 @@ function UserEventList ({events, tickets, setCurrentUser, currentUser}) {
     })
 
     return (
+        <div className="card">
             <table className="table">
               <tbody>
                 <tr>
@@ -37,6 +38,7 @@ function UserEventList ({events, tickets, setCurrentUser, currentUser}) {
 
               </tbody>
         </table>
+        </div>
 
     );
 
