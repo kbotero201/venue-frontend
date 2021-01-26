@@ -1,24 +1,71 @@
 .App {
   text-align: center;
+  
+}
+
+.background {
+  background-color: aquamarine;
+}
+
+a {
+  color: black;
+  text-decoration: none; /* no underline */
 }
 
 /* GridBox */
 .grid-container {
   display: grid;
   grid-template-columns: 0.8fr 0.7fr 1.7fr 0.9fr 0.9fr;
-  grid-template-rows: 0.6fr 1fr 1.4fr;
+  grid-template-rows: 0.6fr 1fr 1.6fr 0.4fr;
   gap: 0px 0px;
   grid-template-areas:
     "Logo Logo Search Login Login"
     "UserTab MainArea MainArea MainArea Blank"
-    "UserTab MainArea MainArea MainArea Blank";
+    "UserTab MainArea MainArea MainArea Blank"
+    "Blank-bottom Blank-bottom Blank-bottom Blank-bottom Blank-bottom";
+  background-color: aquamarine;
+
+  
 }
 .UserTab { grid-area: UserTab; }
 .Logo { grid-area: Logo; }
-.Search { grid-area: Search; }
+.Search { 
+  grid-area: Search; 
+  margin: auto;
+}
 .MainArea { grid-area: MainArea; }
-.Login { grid-area: Login; }
-.Blank { grid-area: Blank; }
+.Login { 
+  grid-area: Login; 
+  margin: auto;
+}
+.Blank { 
+  grid-area: Blank; 
+  height: 630px;
+  float: right;
+
+}
+.Blank-bottom { grid-area: Blank-bottom; }
+
+
+/* 1.6fr
+0.4fr
+1fr
+1fr
+1fr
+1fr
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1.6fr 0.4fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "adsf adsf adsf adsf"
+    "adsf adsf adsf adsf"
+    "adsf adsf adsf adsf"
+    "Blank-bottom Blank-bottom Blank-bottom Blank-bottom";
+}
+.adsf { grid-area: adsf; }
+.Blank-bottom { grid-area: Blank-bottom; } */
 
 /* <div class="grid-container">
   <div class="UserTab"></div>
@@ -119,7 +166,6 @@ th, td {
   border: 2px solid red;
   margin-left: 1%;
   margin-right: 3.5%;
-
 }
 
 .div2 {
@@ -144,10 +190,59 @@ th, td {
   margin-right: 1.5%;
   border-radius: 15px;
  /*text-decoration:none; */
- 
 }
 
-/* ----------------- */
+/* ---------end-------- */
+
+
+
+/* -----SIGN UP PAGE CSS -------- */
+
+/* Fill entire div with image */
+
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-right: 3.5%;
+}
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+
+/* sign up button */
+
+.signupbutton {
+  background-color: black; 
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin-right: 1.5%;
+  border-radius: 15px;
+ /*text-decoration:none; */
+}
+
+.buttondiv {
+  /* border: 2px solid red; */
+  padding-top: 15px;
+  padding-bottom: 25px;
+  margin-left: 0%;
+  margin-right: 3.5%;
+}
+
+
+/* --------end--------- */
+
+
+
+
 
 
 /* image css */

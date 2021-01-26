@@ -111,8 +111,9 @@ function App() {
       </Switch>
       </div>
       
-      {/* <p> another test below!</p>
-      {getCurrentPage()} */}
+      <div className="Blank">
+        {/* This is a page extender placeholder */}
+      </div>
       
     </div>
   );

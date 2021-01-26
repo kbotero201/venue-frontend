@@ -36,12 +36,14 @@ function AddUserForm(){
 
     return(
     <div className="card">
-      <div>
-        <h1> Sign Up </h1>
+      <div className="fill">
+        <img src="../images/billie.jpg" />
       </div>
-       
+      
+
 
       <div>
+      <h1> Sign Up </h1>
         <form onSubmit={handleSubmit} >
         <div >
           <p> Name </p>
@@ -65,18 +67,20 @@ function AddUserForm(){
           </div>
 
           <p> Favorite Event </p>
-          <div className="search"></div>
-            <select value={favorite} onChange={(e)=> setFavorite(e.target.value)} name="favorite" type="favorite" >
+          <div className="search">
+            <select className="round" value={favorite} onChange={(e)=> setFavorite(e.target.value)} name="favorite" type="favorite" >
                 <option value="Concert"> Concert </option>
                 <option value="Party"> Party </option>
                 <option value="Movies"> Movies </option>
             </select>
-          <div className="search"></div>
+          </div>
         </div>
 
-        <button type="submit">
+      <div className="buttondiv">
+        <button className="signupbutton" type="submit">
           Sign Up
         </button>
+      </div>
 
         </form>
         <div>

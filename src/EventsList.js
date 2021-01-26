@@ -3,7 +3,7 @@ import Event from "./Event";
 
 
 
-function EventsList({events, setSelectedCategory, handleCategoryName}) {
+function EventsList({events, setSelectedCategory}) {
 
     const eventsMapped = events.map((event) => {
       return <Event event={event} key={event.id}/>
