@@ -36,7 +36,7 @@ function UserEventRender({event, ticket, currentUser, setCurrentUser}){
             <td>{event.performer_name}</td>
             <td>{event.event_type}</td>
             <td>{event.description.slice(0,13)}...</td>
-            <td onClick={handleTickectDelete}> Delete (Do not press)</td>
+            <td onClick={handleTickectDelete}> Remove </td>
         </tr>
     )
 }

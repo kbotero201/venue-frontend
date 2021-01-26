@@ -8,6 +8,9 @@ import UserShow from "./pages/UserShow"
 import AddUserForm from "./AddUserForm"
 import Search from "./Search.js"
 import LoginButtons from "./pages/LoginButtons"
+import Home from "./Home"
+import LoginPage from "./pages/LoginPage"
+
 
 
 function App() {
@@ -18,6 +21,7 @@ function App() {
   const[currentUser, setCurrentUser] = useState([])
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
+  const [searchBy, setSearhBy] = useState("event_name")
 
   const [userTicketList, setUserTicketList] = useState([])
 
@@ -31,7 +35,15 @@ function App() {
   },[])
 
   let filteredSearch= events.filter(
-    (event)=> event.event_name.toLowerCase().includes(search.toLowerCase())
+    (event)=> {
+      if(searchBy === "event_name"){
+        return event.event_name.toLowerCase().includes(search.toLowerCase())
+      } else if (searchBy === "performer_name"){
+        return event.performer_name.toLowerCase().includes(search.toLowerCase())
+      } else if (searchBy === "description"){
+        return event.description.toLowerCase().includes(search.toLowerCase())
+      }
+    }
     ).filter((event) => {
       if (selectedCategory === "All") {
         return true
@@ -78,13 +90,17 @@ function App() {
                           setCurrentUser={setCurrentUser} 
                           setUserTicketList={setUserTicketList}/>
       </div>
+
+      <div className="UserTab">
+
+
+      </div>
     
 
       <div className="MainArea">
       <Switch>
       <Route exact path="/">
-          <EventsList events={filteredSearch} 
-                      setSelectedCategory={setSelectedCategory}/>
+          <Home events={events}/>
         </Route>
       <Route exact path="/events/:id">
           <EventShow currentUser={currentUser}  
@@ -93,16 +109,22 @@ function App() {
                       userTicketList={userTicketList}/>
         </Route>
         <Route path="/events">
-          <EventsList events={events}/>
+            <EventsList events={filteredSearch} 
+                      setSelectedCategory={setSelectedCategory}
+                      setSearhBy={setSearhBy}/>
         </Route>
         <Route exact path="/users/:id">
-          <UserShow currentUser={currentUser} 
+          <UserShow events={events}
+                    currentUser={currentUser} 
                     setCurrentUser={setCurrentUser} 
                     userTicketList={userTicketList} 
                     setUserTicketList={setUserTicketList}/>
         </Route>
         <Route exact path="/sign-up">
           <AddUserForm />
+        </Route>
+        <Route exact path="/login">
+          <LoginPage setCurrentUser={setCurrentUser}/>
         </Route>
 
         <Route path="*">

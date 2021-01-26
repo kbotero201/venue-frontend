@@ -1,7 +1,7 @@
 import React, {useEffect, useState }from "react"
 import { useParams, Link } from "react-router-dom"
 
-function EventShow({currentUser, setCurrentUser, userTickets, setUserTickets}){
+function EventShow({currentUser, setCurrentUser}){
 
     const [event, setEvent] =useState(null);
     const [isLoaded, setIsLoaded] =useState(false);
@@ -54,18 +54,18 @@ function EventShow({currentUser, setCurrentUser, userTickets, setUserTickets}){
             
     }
 
-    console.log(event.venue.image)
+    //console.log(event.venue.image)
     //https://via.placeholder.com/150
     
     return (
-        <div>
+        <div className="eventcard">
         <h1>{event.event_name}</h1>
         <h2>Hosted By: {event.performer_name}!</h2>
         <img className="imgShow" src={event.image} alt={event.event_name}/>
         
         <br></br>
-        <h3>About: {event.description}</h3>
-        <h3>Location: {event.venue.name}</h3>
+        <p>About: {event.description}</p>
+        <p>Location: {event.venue.name}</p>
         <img className="imgShow" src={event.venue.image} alt={event.venue.name}/>
         <br></br>
         <Link to={`/users/${currentUser.id}`}><button onClick={handleBuyButton}>Buy Ticket!</button></Link>

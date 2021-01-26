@@ -19,19 +19,28 @@ a {
   grid-template-rows: 0.6fr 1fr 1.6fr 0.4fr;
   gap: 0px 0px;
   grid-template-areas:
-    "Logo Logo Search Login Login"
-    "UserTab MainArea MainArea MainArea Blank"
-    "UserTab MainArea MainArea MainArea Blank"
-    "Blank-bottom Blank-bottom Blank-bottom Blank-bottom Blank-bottom";
-  background-color: aquamarine;
-
+    "Logo         Logo           Search       Login         Login"
+    "UserTab      MainArea      MainArea      MainArea       Blank"
+    "UserTab       MainArea      MainArea     MainArea       Blank"
+    "Blank-bottom Blank-bottom  Blank-bottom Blank-bottom Blank-bottom";
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgb(255, 100, 178) 0%, rgba(255,68,221,1) 15%, rgba(148,187,233,1) 63%, rgba(148,233,209,1) 100%);
+    font-family: Andale Mono, monospace;
   
 }
 .UserTab { grid-area: UserTab; }
-.Logo { grid-area: Logo; }
+.Logo { 
+  grid-area: Logo; 
+  margin: auto;
+  padding: 35px;
+  /* border: 2px solid red; */
+  /* border-radius: 3px; */
+  /* background: rgba(238, 174, 202, 0.212); */
+}
 .Search { 
   grid-area: Search; 
   margin: auto;
+  text-align: center;
 }
 .MainArea { grid-area: MainArea; }
 .Login { 
@@ -47,27 +56,9 @@ a {
 .Blank-bottom { grid-area: Blank-bottom; }
 
 
-/* 1.6fr
-0.4fr
-1fr
-1fr
-1fr
-1fr
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1.6fr 0.4fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "adsf adsf adsf adsf"
-    "adsf adsf adsf adsf"
-    "adsf adsf adsf adsf"
-    "Blank-bottom Blank-bottom Blank-bottom Blank-bottom";
-}
-.adsf { grid-area: adsf; }
-.Blank-bottom { grid-area: Blank-bottom; } */
 
-/* <div class="grid-container">
+
+/*<div class="grid-container">
   <div class="UserTab"></div>
   <div class="Logo"></div>
   <div class="Search"></div>
@@ -163,7 +154,7 @@ th, td {
 }
 
 .div1 {
-  border: 2px solid red;
+  /*border: 2px solid red; */
   margin-left: 1%;
   margin-right: 3.5%;
 }
@@ -196,6 +187,84 @@ th, td {
 
 
 
+/* -----HOME PAGE CSS -------- */
+
+.flex-container {
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.long{
+  height: 500px;
+  width: 500px;
+  /*text-align: center; */
+  /* border: 2px solid red; */
+}
+
+.videodiv {
+  padding-top: 17px;
+}
+
+.homecard {
+  /* border: 2px solid red; */
+  text-align: left;
+  border: 1px #000 solid;
+  border-radius: 25px;
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  display: flex;
+
+  margin: 1rem 0.5rem;
+  background-color: #ffffff;
+}
+
+.homecard img {
+  /* border: 2px solid red; */
+  flex: 0 1 auto;
+  height: 90px;
+  width: 90px;
+  margin-right: 0.5rem;
+  /* cursor: pointer; */
+}
+
+.homevideodbutton {
+  background-color: black; 
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin-right: 1.5%;
+  border-radius: 15px;
+  cursor: pointer;
+ /*text-decoration:none; */
+}
+
+.flex-container {
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+}
+
+.flex-icons {
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+}
+
+/* ---------end-------- */
+
+
 /* -----SIGN UP PAGE CSS -------- */
 
 /* Fill entire div with image */
@@ -205,7 +274,9 @@ th, td {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin-right: 3.5%;
+  margin-right: 0%;
+  width: 1000px;
+  height: 200px;
 }
 .fill img {
   flex-shrink: 0;
@@ -256,17 +327,41 @@ th, td {
   /* border: 2px solid red; */
   flex: 0 1 auto;
   height: 120px;
-  margin-right: 0.5rem;
-  cursor: pointer;
 }
 
 .slider-menu img:last-child {
   margin-right: 0;
 }
 
+.outer {
+  position: relative;
+  margin-top: 0px;
+  width:160px;
+}
+
+
 /* --------end--------- */
 
 
+
+
+/* ---- event details  */
+
+.eventcard {
+  /* border: 2px solid red; */
+  /* text-align: lft; */
+  margin: auto;
+  text-align: center;
+  border: 2px #000 solid;
+  border-radius: 20px;
+  padding: 1rem;
+  width: auto;
+  height: auto;
+  /* display: flex; */
+
+  margin: 1rem 0.5rem;
+  background-color: #80f6ff80;
+}
 
 /* image css */
 
@@ -282,5 +377,21 @@ th, td {
 }
 
 
-/* Show Event Css */
 
+.cardlogin {
+  /* border: 2px solid red; */
+  text-align: left;
+  border: 1px #000 solid;
+  border-radius: 25px;
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  display: flex;
+
+  margin: 1rem 0.5rem;
+  background-color: #ffffff;
+}
+
+
+
+/* Show Event Css */

@@ -30,7 +30,7 @@ function UserEventList ({events, tickets, setCurrentUser, currentUser}) {
                     <h3 >Description</h3>
                   </th>
                   <th>
-                    <h3 >Sell?</h3>
+                    <h3 >Sell</h3>
                   </th>
 
                 </tr>

@@ -37,7 +37,7 @@ function AddUserForm(){
     return(
     <div className="card">
       <div className="fill">
-        <img src="../images/billie.jpg" />
+         {/*<img src="./images/banner.png" /> */}
       </div>
       
 

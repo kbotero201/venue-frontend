@@ -3,15 +3,18 @@ import Event from "./Event";
 
 
 
-function EventsList({events, setSelectedCategory}) {
+function EventsList({events, setSelectedCategory, setSearhBy}) {
 
     const eventsMapped = events.map((event) => {
       return <Event event={event} key={event.id}/>
     })
 
-
     function handleCategoryClick(evt){
       setSelectedCategory(evt.target.value)
+    }
+
+    function handleSearchChange(evt) {
+      setSearhBy(evt.target.value)
     }
 
     return (
@@ -20,9 +23,22 @@ function EventsList({events, setSelectedCategory}) {
             <div className="search">
               <select className="round" onChange={handleCategoryClick} name="filter">
                 <option value="All"> Filter </option>
-                <option value="Concert"> Concert </option>
-                <option value="Party"> Party </option>
-                <option value="Movies"> Movies </option>
+                <option value="All"> All </option>
+                <option value="Hip-Hop"> Hip-Hop </option>
+                <option value="Rock"> Rock </option>
+                <option value="Pop"> Pop </option>
+                <option value="Synth-Pop"> Synth-Pop </option>
+                <option value="Party"> Fight Ian </option>
+              </select>
+            </div>
+            
+            <br></br>
+
+            <div className="search">
+              <select className="round" onChange={handleSearchChange}>
+                <option value="event_name">Event Name</option>
+                <option value="performer_name">Performer Name</option>
+                <option value="description">Description</option>
               </select>
             </div>
             
