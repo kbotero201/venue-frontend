@@ -242,6 +242,29 @@ th, td {
 
 
 
+/* slider menu */
+
+.slider-menu {
+  display: flex;
+  /* border: 2px solid red; */
+  overflow-x: auto;
+  margin: 1rem 0;
+  max-width: calc(100vw - 2rem);
+}
+
+.slider-menu img {
+  /* border: 2px solid red; */
+  flex: 0 1 auto;
+  height: 120px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.slider-menu img:last-child {
+  margin-right: 0;
+}
+
+/* --------end--------- */
 
 
 

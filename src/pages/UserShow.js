@@ -18,6 +18,26 @@ function UserShow( {currentUser, setCurrentUser, setTickects}){
 
         <h2>Here is the list of events you plan on going to!</h2>
         {currentUser.tickets ? <div> <UserEventList events={userEvents} tickets={userTickets} setTickects={setTickects} currentUser={currentUser} setCurrentUser={setCurrentUser}/> </div>: null}
+
+        <h3>Recommended events for you:</h3>
+        <div className="slider-menu">
+            <div className="card">
+                <img src="../images/billie.jpg" />
+                <div>
+                <p>Billie name</p>
+                </div>
+            </div>
+            <div className="card">image</div>
+            <div className="card">image</div>
+            <div className="card">image</div>
+            <div className="card">image</div>
+            <div className="card">image</div>
+            <div className="card">image</div>
+            <div className="card">image</div>
+            <div className="card">image</div>
+        </div>
+
+
         </div>
 
     )
