@@ -17,8 +17,8 @@ function EventsList({events, setSelectedCategory, handleCategoryName}) {
     return (
           
           <div>
-            <div>
-              <select onChange={handleCategoryClick} name="filter">
+            <div className="search">
+              <select className="round" onChange={handleCategoryClick} name="filter">
                 <option value="All"> Filter </option>
                 <option value="Concert"> Concert </option>
                 <option value="Party"> Party </option>
@@ -26,33 +26,10 @@ function EventsList({events, setSelectedCategory, handleCategoryName}) {
               </select>
             </div>
             
-            <table className="table">
-              <tbody>
-                <tr>
-                  <th>
-                    
-                    <h3 >Name </h3>
-                  
-                  </th>
-                  <th>
-                    <h3 >Preformer</h3>
-                  </th>
-                  <th>
-                    <h3> Type of Event</h3>
-                  </th>
-                  <th>
-                    <h3 >Description</h3>
-                  </th>
-                  <th>
-                    <h3 >Location</h3>
-                  </th>
+          
+          {eventsMapped}
+          
 
-                </tr>
-                {eventsMapped}
-               
-                
-              </tbody>
-          </table>
         </div>
 
     );

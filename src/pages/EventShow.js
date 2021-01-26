@@ -49,15 +49,20 @@ function EventShow({currentUser, setCurrentUser, userTickets, setUserTickets}){
             })
             .then(r => r.json())
             .then(newTicket => reloadCurrentUser(currentUser))
-        
             
     }
 
+    console.log(event.image)
+    //https://via.placeholder.com/150
     
     return (
         <div>
         <h1>{event.event_name}</h1>
         <h2>{event.performer_name}</h2>
+        <img className="imgShow" src={event.image} />
+        <img className="imgShow" src={"venue-frontend/public/images/patrick.png"} />
+        <br></br>
+        <p>About: {event.description}</p>
         <button onClick={handleBuyButton}>Buy Ticket!</button>
         </div>
     )

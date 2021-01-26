@@ -6,13 +6,15 @@ import Header from "./Header"
 import EventShow from "./pages/EventShow"
 import UserShow from "./pages/UserShow"
 import AddUserForm from "./AddUserForm"
+import Search from "./Search.js"
+import LoginButtons from "./pages/LoginButtons"
 
 
 function App() {
 
   const[events, setEvents] = useState([])
   //const[isLogin, setIsLogin] = useState(false)
-  const [eventsToShow, setEventsToShow] = useState([])
+  //const [eventsToShow, setEventsToShow] = useState([])
   const[currentUser, setCurrentUser] = useState([])
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -44,12 +46,20 @@ function App() {
   // let finalFiltered = filteredSearch.concat(filteredSearch2).unique()
 
 
+//   <div class="grid-container">
+//   <div class="Header"></div>
+//   <div class="MainArea"></div>
+//   <div class="UserTab"></div>
+//   <div class="Blank"></div>
+// </div>
 
 
 
   return (
-    <div>
+    <div className="grid-container">
       
+     
+     
       <Header 
       currentUser={currentUser} 
       setCurrentUser={setCurrentUser}
@@ -59,6 +69,18 @@ function App() {
       />
 
 
+      <div className="Search">
+        <Search search={search} setSearch={setSearch} />
+      </div>
+
+      <div className="Login">  
+            <LoginButtons currentUser={currentUser} 
+                          setCurrentUser={setCurrentUser} 
+                          setUserTicketList={setUserTicketList}/>
+      </div>
+    
+
+      <div className="MainArea">
       <Switch>
       <Route exact path="/">
           <EventsList events={filteredSearch} 
@@ -87,6 +109,7 @@ function App() {
           <h1>404 Page</h1>
         </Route>
       </Switch>
+      </div>
       
       {/* <p> another test below!</p>
       {getCurrentPage()} */}

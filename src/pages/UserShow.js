@@ -14,8 +14,9 @@ function UserShow( {currentUser, setCurrentUser, userTicketList, setTickects}){
     return (
         <div>
         <h1>{currentUser.name}</h1>
-        <h2>{currentUser.favorite}</h2>
+        <h2>Favorite: {currentUser.favorite}</h2>
 
+        <h2>Here is the list of events you plan on going to!</h2>
         {currentUser.tickets ? <div> <UserEventList events={userEvents} tickets={userTickets} setTickects={setTickects} currentUser={currentUser} setCurrentUser={setCurrentUser}/> </div>: null}
         </div>
 

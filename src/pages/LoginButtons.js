@@ -29,8 +29,8 @@ function LoginButtons({currentUser, setCurrentUser, setUserTicketList}) {
 
     return (
       <div>
-        {currentUser ? <button onClick={handleLogout}><Link to={`/`}>Log out</Link></button> : <button onClick={handleLogin}>Log in</button> }
-        {currentUser ?  null : <button><Link to={`/sign-up`}>Sign Up</Link></button> }
+        {currentUser ? <button className="button" onClick={handleLogout}><Link to={`/`}>Log out</Link></button> : <button className="button" onClick={handleLogin}>Log in</button> }
+        {currentUser ?  null : <button className="button"><Link to={`/sign-up`} >Sign Up</Link></button> }
         {currentUser ? <h1>Welcome, <Link to={`/users/${currentUser.id}`}>{currentUser.name}</Link></h1> : null }
       </div>
     );
