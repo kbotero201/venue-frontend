@@ -64,15 +64,11 @@ function EventsList({events, setSelectedCategory, setSearhBy, index, setIndex, s
               </div>
               </div>
             </div>
-
-         
-
-            
           
           {eventsMapped}
           
-          {index != 0 ? <button onClick={handlePrevPage}>Prev Page! </button> : null}
-          {index + 6 < count ? <button onClick={handleNextPage}>Next Page! </button> : null}
+          {index != 0 ? <button className="cardbutton" onClick={handlePrevPage}> Prev Page! </button> : null}
+          {index + 6 < count ? <button className="cardbutton" onClick={handleNextPage}>Next Page! </button> : null}
           
         </div>
 

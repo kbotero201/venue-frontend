@@ -1,18 +1,21 @@
 import React, {useEffect, useState }from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useLocation} from "react-router-dom"
 import RecSlider from "../RecSlider"
 
 
 function VenueShow({events}) {
 
+    // const location = useLocation();
+    // console.log(location.pathname)
+
     const [showVenue, setShowVenue] =useState(null);
     const [isLoaded, setIsLoaded] =useState(false);
 
-    const params =useParams();
-    //console.log(params)
+    const params = useParams();
+    console.log(params)
 
     useEffect(() => {
-        fetch(`http://localhost:3000/api/v1/venues/${params.id}`)
+        fetch(`http://localhost:3000/api/v1/venues/${params.id}}`)
         .then((r) => r.json())
         .then((venue) => {
             setShowVenue(venue);
@@ -20,21 +23,22 @@ function VenueShow({events}) {
         })
     }, [params.id])
 
+    if (!isLoaded) return <h2>Loading...</h2>
+
+    if (isLoaded) {
     const venueEventsMapped = events.map((event) => {
+        
         if (event.venue.id === showVenue.id){
             return <RecSlider event={event} key={event.id}/>
         }
       })
-
-
+    
     // "id": 1,
     // "name": "Madison Square Garden",
     // "location": "manhattan",
     // "image": "../images/msg.jpg",
     // "description": "The World's Most Famous Arena",
     // "events"
-
-    if (!isLoaded) return <h2>Loading...</h2>
 
     return (
         <div className="eventcard">
@@ -53,6 +57,7 @@ function VenueShow({events}) {
         
         </div>
     )
+    }
     
 }
 
