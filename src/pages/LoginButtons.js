@@ -28,11 +28,18 @@ function LoginButtons({currentUser, setCurrentUser}) {
 
     // <Link to={`/events/${event.id}`}>{event.event_name}</Link>
 
+    //{currentUser ? <p>Welcome, <Link to={`/users/${currentUser.id}`}>{currentUser.name}</Link></p> : null }
+
     return (
-      <div>
-        {currentUser ? <button className="button" onClick={handleLogout}><Link to={`/`}>Log out</Link></button> : <button className="button" onClick={handleLogin}><Link to={`/login`}>Log in</Link></button> }
-        {currentUser ?  null : <button className="button"><Link to={`/sign-up`} >Sign Up</Link></button> }
-        {currentUser ? <h1>Welcome, <Link to={`/users/${currentUser.id}`}>{currentUser.name}</Link></h1> : null }
+      <div className="flex-container">
+        <div>
+          {currentUser ? <button className="navbarbuttons" onClick={handleLogout}><Link to={`/`}>Log out</Link></button> : <button className="navbarbuttons" onClick={handleLogin}><Link to={`/login`}>Log in</Link></button> }
+
+        </div>
+        <div>
+          {currentUser ?  null : <button className="navbarbuttons"><Link to={`/sign-up`} >Sign Up</Link></button> }
+
+        </div>
       </div>
     );
   }
