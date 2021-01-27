@@ -68,7 +68,7 @@ function EventShow({currentUser, setCurrentUser}){
         <p>Location: {event.venue.name}</p>
         <Link to={`/venues/${event.venue.id}`}><img className="imgShow" src={event.venue.image} alt={event.venue.name}/></Link>
         <br></br>
-        <Link to={`/users/${currentUser.id}`}><button className="cardbutton" onClick={handleBuyButton}>Buy Ticket!</button></Link>
+        <Link to={`/users/${currentUser.id}`}><button className="navbarbuttons" onClick={handleBuyButton}>Buy Ticket!</button></Link>
         
         </div>
     )

@@ -29,13 +29,6 @@ function VenueShow({events}) {
             return <RecSlider event={event} key={event.id}/>
         }
       })
-    
-    // "id": 1,
-    // "name": "Madison Square Garden",
-    // "location": "manhattan",
-    // "image": "../images/msg.jpg",
-    // "description": "The World's Most Famous Arena",
-    // "events"
 
     const formattedLocation = `https://www.google.com/maps/search/${showVenue.location.split(' ').join('+')}`
     console.log(formattedLocation)
