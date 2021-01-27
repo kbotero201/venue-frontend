@@ -2,10 +2,13 @@ import React from "react";
 import Event from "./Event";
 
 
+function EventsList({events, setSelectedCategory, setSearhBy, index, setIndex}) {
 
-function EventsList({events, setSelectedCategory, setSearhBy}) {
+    
+    const count = events.length
+    console.log(Math.ceil(count / 8))
 
-    const eventsMapped = events.map((event) => {
+    const eventsMapped = events.slice(index, index + 6).map((event) => {
       return <Event event={event} key={event.id}/>
     })
 
@@ -15,6 +18,14 @@ function EventsList({events, setSelectedCategory, setSearhBy}) {
 
     function handleSearchChange(evt) {
       setSearhBy(evt.target.value)
+    }
+
+    function handleNextPage(evt) {
+      setIndex(index + 6)
+    }
+
+    function handlePrevPage(evt){
+      setIndex(index - 6)
     }
 
     return (
@@ -28,6 +39,7 @@ function EventsList({events, setSelectedCategory, setSearhBy}) {
                 <option value="Rock"> Rock </option>
                 <option value="Pop"> Pop </option>
                 <option value="Synth-Pop"> Synth-Pop </option>
+                <option value="EDM"> EDM </option>
                 <option value="Party"> Fight Ian </option>
               </select>
             </div>
@@ -41,11 +53,12 @@ function EventsList({events, setSelectedCategory, setSearhBy}) {
                 <option value="description">Description</option>
               </select>
             </div>
-            
           
           {eventsMapped}
           
-
+          {index != 0 ? <button onClick={handlePrevPage}>Prev Page! </button> : null}
+          {index + 6 < count ? <button onClick={handleNextPage}>Next Page! </button> : null}
+          
         </div>
 
     );

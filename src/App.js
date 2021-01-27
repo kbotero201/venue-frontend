@@ -5,6 +5,7 @@ import EventsList from "./EventsList"
 import Header from "./Header"
 import EventShow from "./pages/EventShow"
 import UserShow from "./pages/UserShow"
+import VenueShow from "./pages/VenueShow"
 import AddUserForm from "./AddUserForm"
 import Search from "./Search.js"
 import LoginButtons from "./pages/LoginButtons"
@@ -22,6 +23,7 @@ function App() {
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [searchBy, setSearhBy] = useState("event_name")
+  const [index, setIndex] = useState(0)
 
   const [userTicketList, setUserTicketList] = useState([])
 
@@ -111,7 +113,10 @@ function App() {
         <Route path="/events">
             <EventsList events={filteredSearch} 
                       setSelectedCategory={setSelectedCategory}
-                      setSearhBy={setSearhBy}/>
+                      setSearhBy={setSearhBy}
+                      index={index}
+                      setIndex={setIndex}
+                      />
         </Route>
         <Route exact path="/users/:id">
           <UserShow events={events}
@@ -125,6 +130,10 @@ function App() {
         </Route>
         <Route exact path="/login">
           <LoginPage setCurrentUser={setCurrentUser}/>
+        </Route>
+
+        <Route exact path="/venues/:id">
+          <VenueShow events={events}/>
         </Route>
 
         <Route path="*">

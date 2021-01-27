@@ -10,13 +10,15 @@ function UserShow( {currentUser, setCurrentUser, setTickects, events}){
     const userTickets = currentUser.tickets
 
     const recEventsMapped = events.map((event) => {
-        return <RecSlider event={event} key={event.id}/>
+        if (event.event_type.toLowerCase() === currentUser.favorite.toLowerCase()) {
+            return <RecSlider event={event} key={event.id}/>
+        }
       })
 
     return (
         <div>
         <h1>{currentUser.name}</h1>
-        <h2>Favorite: {currentUser.favorite}</h2>
+        <h2>Favorite Genre: {currentUser.favorite}</h2>
 
         <h2>Here is the list of events you plan on going to!</h2>
         {currentUser.tickets ? <div> <UserEventList events={userEvents} tickets={userTickets} setTickects={setTickects} currentUser={currentUser} setCurrentUser={setCurrentUser}/> </div>: null}
@@ -26,7 +28,6 @@ function UserShow( {currentUser, setCurrentUser, setTickects, events}){
         <div className="slider-menu">
             {recEventsMapped}
         </div>
-
 
         </div>
 

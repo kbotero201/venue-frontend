@@ -36,6 +36,7 @@ a {
   /* border: 2px solid red; */
   /* border-radius: 3px; */
   /* background: rgba(238, 174, 202, 0.212); */
+  /* max-height: 50px; */
 }
 .Search { 
   grid-area: Search; 
@@ -362,6 +363,15 @@ th, td {
   overflow-x: auto;
   margin: 1rem 0;
   max-width: calc(100vw - 2rem);
+}
+
+.slider-menu2 {
+  display: flex;
+  /* border: 2px solid red; */
+  overflow-x: auto;
+  margin: 1rem 0;
+  max-width: calc(100vw - 2rem);
+  
 }
 
 .slider-menu img {
