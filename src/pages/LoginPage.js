@@ -36,7 +36,6 @@ function LoginPage({setCurrentUser}) {
                 
             })
             
-            //console.log("Asdf")
 
           }
       })
@@ -47,6 +46,10 @@ function LoginPage({setCurrentUser}) {
 
     return(
     <div className="cardlogin">
+
+      <div className="fillsignup">
+        <img src="./images/bannerlong.png" /> 
+      </div>
 
       <div>
       <h1> Login </h1>

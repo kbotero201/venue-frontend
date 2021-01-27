@@ -258,8 +258,17 @@ th, td {
 
 .flex-icons {
   display: flex;
-  /*flex-direction: column;*/
   justify-content: center;
+  text-align: center;
+  /* background-color: white; */
+  padding: 30px 30px;
+}
+
+.flex-icons img {
+  flex: 0 1 auto;
+  height: 90px;
+  width: 90px;
+  margin-right: 0.5rem;
 }
 
 /* ---------end-------- */
@@ -284,6 +293,7 @@ th, td {
   min-height: 100%
 }
 
+
 /* sign up button */
 
 .signupbutton {
@@ -307,6 +317,37 @@ th, td {
   margin-left: 0%;
   margin-right: 3.5%;
 }
+
+.fillsignup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-right: 2.5%;
+  max-width: 200px;
+  max-height: 500px;
+
+}
+.fillsignup img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+
+.cardlogin {
+  /* border: 2px solid red; */
+  text-align: left;
+  border: 1px #000 solid;
+  border-radius: 25px;
+  padding: 1rem;
+  width: 800px;
+  height: auto;
+  display: flex;
+
+  margin: 1rem 1rem;
+  background-color: #ffffff;
+}
+
 
 
 /* --------end--------- */
@@ -378,19 +419,6 @@ th, td {
 
 
 
-.cardlogin {
-  /* border: 2px solid red; */
-  text-align: left;
-  border: 1px #000 solid;
-  border-radius: 25px;
-  padding: 1rem;
-  width: stretch;
-  height: auto;
-  display: flex;
-
-  margin: 1rem 0.5rem;
-  background-color: #ffffff;
-}
 
 
 

@@ -48,9 +48,18 @@ function Home({events}){
                 </div>
             </div>
 
-            <div className="flex-container">
-                <div className="fill">
-                    <img src="../images/banner.png" />
+            <div className="flex-icons">
+                <div style={{flexGrow: 5}} >
+                    <img src="../images/spotlights.png" />
+                    <p> Search Events</p>
+                </div>    
+                <div class="child" style={{flexGrow: 8}}>
+                    <img src="../images/tickets.png" /> 
+                    <p> Buy Tickets</p>
+                </div>    
+                <div style={{flexGrow: 5}}>
+                    <img src="../images/concert.png" />
+                    <p> Experience Live!</p>
                 </div>    
             </div>
 

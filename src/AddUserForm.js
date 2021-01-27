@@ -35,9 +35,9 @@ function AddUserForm(){
 
 
     return(
-    <div className="card">
-      <div className="fill">
-         {/*<img src="./images/banner.png" /> */}
+    <div className="cardlogin">
+      <div className="fillsignup">
+        <img src="./images/bannerlong.png" /> 
       </div>
       
 
