@@ -11,6 +11,7 @@ import Search from "./Search.js"
 import LoginButtons from "./pages/LoginButtons"
 import Home from "./Home"
 import LoginPage from "./pages/LoginPage"
+import { Link } from "react-router-dom"
 
 
 
@@ -84,7 +85,8 @@ function App() {
 
 
       <div className="Search">
-        <Search search={search} setSearch={setSearch} />
+       <Link to={"/events"}><h3>Events</h3></Link>
+        {/*<Search search={search} setSearch={setSearch} />*/}
       </div>
 
       <div className="Login">  
@@ -111,7 +113,8 @@ function App() {
                       userTicketList={userTicketList}/>
         </Route>
         <Route path="/events">
-            <EventsList events={filteredSearch} 
+            <EventsList search={search} setSearch={setSearch}
+                      events={filteredSearch} 
                       setSelectedCategory={setSelectedCategory}
                       setSearhBy={setSearhBy}
                       index={index}

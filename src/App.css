@@ -433,3 +433,28 @@ th, td {
 
 
 /* Show Event Css */
+
+
+
+
+/* Search row filters CSS */
+
+.searchdiv1 {
+  /*border: 2px solid red; */
+  margin-left: 0%;
+  margin-right: 4.5%;
+}
+
+.searchdiv2 {
+  /*border: 2px solid red; */
+  flex: 1 10px;
+  margin-left: 0%;
+  margin-right: 4.5%;
+}
+
+.searchdiv3 {
+  /*border: 2px solid red; */
+  flex: -1px;
+}
+
+/* --------end--------- */

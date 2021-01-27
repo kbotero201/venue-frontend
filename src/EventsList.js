@@ -1,8 +1,9 @@
 import React from "react";
 import Event from "./Event";
+import Search from "./Search"
 
 
-function EventsList({events, setSelectedCategory, setSearhBy, index, setIndex}) {
+function EventsList({events, setSelectedCategory, setSearhBy, index, setIndex, search, setSearch}) {
 
     
     const count = events.length
@@ -31,28 +32,42 @@ function EventsList({events, setSelectedCategory, setSearhBy, index, setIndex}) 
     return (
           
           <div>
-            <div className="search">
-              <select className="round" onChange={handleCategoryClick} name="filter">
-                <option value="All"> Filter </option>
-                <option value="All"> All </option>
-                <option value="Hip-Hop"> Hip-Hop </option>
-                <option value="Rock"> Rock </option>
-                <option value="Pop"> Pop </option>
-                <option value="Synth-Pop"> Synth-Pop </option>
-                <option value="EDM"> EDM </option>
-                <option value="Party"> Fight Ian </option>
-              </select>
-            </div>
+            
             
             <br></br>
 
-            <div className="search">
-              <select className="round" onChange={handleSearchChange}>
-                <option value="event_name">Event Name</option>
-                <option value="performer_name">Performer Name</option>
-                <option value="description">Description</option>
-              </select>
+            <div className="flex-container">    
+              <div className="searchdiv1"> 
+                <Search search={search} setSearch={setSearch} />
+              </div>
+              <div className="searchdiv2"> 
+                <div className="search">
+                  <select className="round" onChange={handleSearchChange}>
+                   <option value="event_name">Event Name</option>
+                   <option value="performer_name">Performer Name</option>
+                   <option value="description">Description</option>
+                  </select>
+                </div>
+              </div>
+              <div className="searchdiv3">
+              <div className="search">
+                <select className="round" onChange={handleCategoryClick} name="filter">
+                  <option value="All"> Filter </option>
+                  <option value="All"> All </option>
+                  <option value="Hip-Hop"> Hip-Hop </option>
+                  <option value="Rock"> Rock </option>
+                  <option value="Pop"> Pop </option>
+                  <option value="Synth-Pop"> Synth-Pop </option>
+                  <option value="EDM"> EDM </option>
+                  <option value="Party"> Fight Ian </option>
+                </select>
+              </div>
+              </div>
             </div>
+
+         
+
+            
           
           {eventsMapped}
           

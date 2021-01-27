@@ -7,17 +7,15 @@ function Search({search, setSearch}){
 
     return(
         <div>
-        <Link to={"/events"}><h3>Events</h3></Link>
+        {/*<Link to={"/events"}><h3>Events</h3></Link>*/}
+        
         <div className="search">
-
-            
-
-            <input
+           <input
             className="round"
             value={search}
             onChange={(e)=> setSearch(e.target.value)}
             type="text"
-            placeholder={"Search events"}
+            placeholder={"Search"}
             />
         </div>
         </div>
