@@ -24,6 +24,7 @@ function App() {
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [searchBy, setSearhBy] = useState("event_name")
+  const [venueSearchBy, setVenueSearchBy] = useState("location")
   const [index, setIndex] = useState(0)
 
   const [userTicketList, setUserTicketList] = useState([])
@@ -64,6 +65,19 @@ function App() {
       return (event.event_type === selectedCategory)
       }
     })
+
+
+    let venuesFilteredSearch= venues.filter(
+      (venue)=> {
+        if(venueSearchBy === "venue_name"){
+          return venue.name.toLowerCase().includes(search.toLowerCase())
+        } else if (venueSearchBy === "location"){
+          return venue.location.toLowerCase().includes(search.toLowerCase())
+        } else if (venueSearchBy === "description"){
+          return venue.description.toLowerCase().includes(search.toLowerCase())
+        }
+      })
+
 
 
 
@@ -137,9 +151,8 @@ function App() {
         </Route>
         <Route exact path="/venues">
             <VenuesList search={search} setSearch={setSearch}
-                      venues={venues} 
-                      setSelectedCategory={setSelectedCategory}
-                      setSearhBy={setSearhBy}
+                      venues={venuesFilteredSearch} 
+                      setVenueSearchBy={setVenueSearchBy}
                       index={index}
                       setIndex={setIndex}
                       />

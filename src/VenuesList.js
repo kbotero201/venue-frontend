@@ -3,7 +3,7 @@ import Venue from "./Venue";
 import Search from "./Search"
 
 
-function VenuesList({venues, index, setIndex}) {
+function VenuesList({venues, index, setIndex, search, setSearch, setVenueSearchBy}) {
 
     
     const count = venues.length
@@ -21,6 +21,14 @@ function VenuesList({venues, index, setIndex}) {
       setIndex(index - 6)
     }
 
+    function handleSearchChange(evt) {
+      setVenueSearchBy(evt.target.value)
+    }
+
+    function handleSearchChange(evt) {
+      setVenueSearchBy(evt.target.value)
+    }
+
     return (
           
           <div>
@@ -30,13 +38,13 @@ function VenuesList({venues, index, setIndex}) {
 
             <div className="flex-container">    
               <div className="searchdiv1"> 
-                <Search  />
+                <Search search={search} setSearch={setSearch} />
               </div>
               <div className="searchdiv2"> 
                 <div className="search">
-                  <select className="round" >
-                   <option value="event_name">Location</option>
-                   <option value="performer_name">Name</option>
+                  <select className="round" onChange={handleSearchChange}>
+                   <option value="location">Location</option>
+                   <option value="venue_name">Name</option>
                    <option value="description">Description</option>
                   </select>
                 </div>
