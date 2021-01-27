@@ -5,9 +5,6 @@ import RecSlider from "../RecSlider"
 
 function VenueShow({events}) {
 
-    // const location = useLocation();
-    // console.log(location.pathname)
-
     const [showVenue, setShowVenue] =useState(null);
     const [isLoaded, setIsLoaded] =useState(false);
 
@@ -40,6 +37,10 @@ function VenueShow({events}) {
     // "description": "The World's Most Famous Arena",
     // "events"
 
+    const formattedLocation = `https://www.google.com/maps/search/${showVenue.location.split(' ').join('+')}`
+    console.log(formattedLocation)
+  
+
     return (
         <div className="eventcard">
         <h1>{showVenue.name}</h1>
@@ -48,6 +49,7 @@ function VenueShow({events}) {
         <br></br>
         <p>About: {showVenue.description}</p>
         <p>Location: {showVenue.location}</p>
+        <p className="navbarbuttons"><a href={formattedLocation}>Get Directions</a></p>
         <br></br>
         <h4>List of Upcoming Shows</h4>
         <div className="slider-menu2">
