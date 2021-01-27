@@ -135,7 +135,7 @@ function App() {
                       setIndex={setIndex}
                       />
         </Route>
-        <Route path="/venues">
+        <Route exact path="/venues">
             <VenuesList search={search} setSearch={setSearch}
                       venues={venues} 
                       setSelectedCategory={setSelectedCategory}
@@ -144,7 +144,6 @@ function App() {
                       setIndex={setIndex}
                       />
         </Route>
-  
         <Route exact path="/users/:id">
           <UserShow events={events}
                     currentUser={currentUser} 
