@@ -105,17 +105,7 @@ a {
 .Blank-bottom { grid-area: Blank-bottom; }
 
 
-
-
-/*<div class="grid-container">
-  <div class="UserTab"></div>
-  <div class="Logo"></div>
-  <div class="Search"></div>
-  <div class="MainArea"></div>
-  <div class="Login"></div>
-  <div class="Blank"></div>
-</div> */
-/* gridbox end */
+/* --------gridbox end --------------*/
 
 /* Table CSS HERE */
 table, td, th {  

@@ -16,9 +16,7 @@ function UserEventList ({events, tickets, setCurrentUser, currentUser}) {
               <tbody>
                 <tr>
                   <th>
-                    
                     <h3 >Name </h3>
-                  
                   </th>
                   <th>
                     <h3 >Preformer</h3>

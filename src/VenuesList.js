@@ -50,18 +50,6 @@ function VenuesList({venues, index, setIndex, search, setSearch, setVenueSearchB
                 </div>
               </div>
               <div className="searchdiv3">
-              {/*<div className="search">
-                <select className="round"  name="filter">
-                  <option value="All"> Filter </option>
-                  <option value="All"> All </option>
-                  <option value="Hip-Hop"> Hip-Hop </option>
-                  <option value="Rock"> Rock </option>
-                  <option value="Pop"> Pop </option>
-                  <option value="Synth-Pop"> Synth-Pop </option>
-                  <option value="EDM"> EDM </option>
-                  <option value="Party"> Fight Ian </option>
-                </select>
-            </div>*/}
               </div>
             </div>
           

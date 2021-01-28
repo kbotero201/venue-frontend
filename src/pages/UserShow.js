@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-//import { useParams } from "react-router-dom"
 import UserEventList from "./UserEventList"
 import RecSlider from "../RecSlider"
 
@@ -40,7 +39,6 @@ function UserShow( {currentUser, setCurrentUser, setTickects, events}){
     }
 
     function reloadCurrentUser(currentUser) {
-        //console.log(currentUser, "user", currentUser.id
         fetch(`http://localhost:3000/api/v1/users/${currentUser.id}`)
             .then((r) => r.json())
             .then(r => setCurrentUser(r));
@@ -51,7 +49,6 @@ function UserShow( {currentUser, setCurrentUser, setTickects, events}){
         <h1>{currentUser.name}</h1>
         <h2>Favorite Genre: {currentUser.favorite}</h2>
 
-        {/* <form onSubmit={handleUserSubmit}> */}
             <select onChange={handleCategoryClick} name="filter">
                     <option value="All">Change Favorite?</option>
                     <option value="All"> All </option>
@@ -64,7 +61,6 @@ function UserShow( {currentUser, setCurrentUser, setTickects, events}){
             </select>
 
             <button onClick={handleUserSubmit} className="cardbutton">Update Favorite</button>
-        {/* </form> */}
 
         <h2>Here is the list of events you plan on going to!</h2>
         {currentUser.tickets ? <div> <UserEventList events={userEvents} tickets={userTickets} setTickects={setTickects} currentUser={currentUser} setCurrentUser={setCurrentUser}/> </div>: null}

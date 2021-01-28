@@ -23,12 +23,6 @@ function LoginButtons({currentUser, setCurrentUser}) {
       setCurrentUser(null);
     }
 
-    //  <button onClick={handleLogout}><Link to={`/`}>Log out</Link></button>
-    //<button onClick={handleLogin}>Log in</button>
-
-    // <Link to={`/events/${event.id}`}>{event.event_name}</Link>
-
-    //{currentUser ? <p>Welcome, <Link to={`/users/${currentUser.id}`}>{currentUser.name}</Link></p> : null }
 
     return (
       <div className="flex-container">

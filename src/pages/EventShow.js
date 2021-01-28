@@ -5,9 +5,7 @@ function EventShow({currentUser, setCurrentUser}){
 
     const [event, setEvent] =useState(null);
     const [isLoaded, setIsLoaded] =useState(false);
-
     const params =useParams();
-    //console.log(params)
 
     useEffect(() => {
         fetch(`http://localhost:3000/api/v1/events/${params.id}`)
@@ -29,7 +27,6 @@ function EventShow({currentUser, setCurrentUser}){
     }
 
     function handleBuyButton() {
-        //console.log(currentUser.id, "user Id & ", Number(params.id), "event id")
         const eventIdNum = Number(params.id)
 
         const data ={
@@ -38,7 +35,6 @@ function EventShow({currentUser, setCurrentUser}){
         }
 
         console.log(currentUser)
-        //const newCurrentUser = [...currentUser, currentUser.tickets]
 
         fetch(`http://localhost:3000/api/v1/tickets`, {
             method: 'POST', 

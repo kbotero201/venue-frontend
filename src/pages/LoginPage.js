@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom"
 
 function LoginPage({setCurrentUser}) {
 
@@ -19,8 +18,6 @@ function LoginPage({setCurrentUser}) {
 
 
     function handleSubmit(evt){
-      //console.log("submitted!")
-      //console.log(users)
       evt.preventDefault()
       let good = false;
 
@@ -31,15 +28,10 @@ function LoginPage({setCurrentUser}) {
             .then(resp=> resp.json())
             .then(data => {
                 setCurrentUser(data)
-                //window.location.replace('/events');
-                good = true;
-                
+                good = true;  
             })
-            
-
           }
       })
-
   }
 
 
@@ -83,14 +75,6 @@ function LoginPage({setCurrentUser}) {
       </div>
 
         </form>
-        {/* <div>
-            <input type="checkbox" id="agree" name="agree"/>
-            <label for="scales">Remember Me</label>
-        </div> */}
-
-
-        {/* <span class="popuptext" id="myPopup">Popup text...</span> */}
-
       </div>
 
     </div>

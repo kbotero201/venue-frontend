@@ -47,8 +47,7 @@ function VenueShow({events}) {
         <h4>List of Upcoming Shows</h4>
         <div className="slider-menu2">
             {venueEventsMapped}
-        </div>
-       
+        </div>   
         
         </div>
     )

@@ -3,12 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import EventsList from "./EventsList"
 import VenuesList from "./VenuesList"
-import Header from "./Header"
 import EventShow from "./pages/EventShow"
 import UserShow from "./pages/UserShow"
 import VenueShow from "./pages/VenueShow"
 import AddUserForm from "./AddUserForm"
-import Search from "./Search.js"
 import LoginButtons from "./pages/LoginButtons"
 import Home from "./Home"
 import LoginPage from "./pages/LoginPage"
@@ -182,7 +180,6 @@ function App() {
       </div>
       
       <div className="Blank">
-        {/* This is a page extender placeholder */}
       </div>
       
     </div>
