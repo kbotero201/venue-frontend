@@ -65,3 +65,5 @@ function VenuesList({venues, index, setIndex, search, setSearch, setVenueSearchB
 }
 
 export default VenuesList; 
+
+<div id="overL500" style="top: 117px; left: 124px; color: rgb(0, 0, 221);">x</div>
