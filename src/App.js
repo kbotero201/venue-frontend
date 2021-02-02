@@ -11,7 +11,6 @@ import LoginButtons from "./pages/LoginButtons"
 import Home from "./Home"
 import LoginPage from "./pages/LoginPage"
 import { Link } from "react-router-dom"
-import Test from "./Test"
 
 
 
@@ -127,7 +126,6 @@ function App() {
 
       </div>
     
-      <Test />
 
       <div className="MainArea">
       <Switch>
